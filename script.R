@@ -1,5 +1,5 @@
 # set working directory
-setwd("C:/Users/SURHUD/Desktop/Desktop/Stats/For/For Abhijit Nair/Survival")
+setwd("your/working/directory")
 
 # import libraries
 library(tidyverse)
@@ -8,7 +8,7 @@ library(flextable)
 library(ggsci)
 
 # import data
-df <- read.csv("C:/Users/SURHUD/Desktop/Desktop/Stats/For/For Abhijit Nair/Survival/data.csv",
+df <- read.csv("/data.csv",
                check.names = F)
 attach(df)
 df %>% colnames
@@ -26,7 +26,7 @@ table1 %>%
   as_flex_table() %>%
   save_as_docx(path = "Table 1.docx")
 
-# plots
+# plots (grouped bar and boxplots)
 df <- df %>%
   mutate(Survival = recode(Outcome, `0` = "Death", `1` = "Survived"))
 
